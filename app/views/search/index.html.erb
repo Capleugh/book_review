@@ -1,8 +1,10 @@
-<h1><%= @book[:title] %></h1>
-<h6><%= @book[:author] %></h6>
-<h6><%= @book[:genre] %></h6>
+<h1><%= @book[:title_suggest] %></h1>
+<h6><%= @book[:author_name] %></h6>
+<% if @book[:subjects] %>
+  <h6><%= @book[:subjects] %></h6>
+<% end %>
 <% @reviews.each do |review| %>
-  <ul class="reveiws">
+  <ul class="reviews">
     <li><%= review[:summary] %></li>
     <li><%= review[:publication_dt] %></li>
   </ul>
