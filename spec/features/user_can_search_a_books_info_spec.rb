@@ -5,15 +5,15 @@ describe "As a user" do
     scenario "I should be redirected to /search and see books info including title, author, genre(subjects) and I should also see 2 reviews(summaries)" do
       visit '/'
 
-      fill_in :placeholder, with: 'the man who saw everything'
+      fill_in :title, with: 'the man who saw everything'
 
       click_button 'Find Book'
 
       expect(current_path).to eq('/search')
-      expect(page).to have_content()
-      expect(page).to have_content()
-      expect(page).to have_content()
-      expect(page).to have_content()
+      expect(page).to have_content("The Man Who Saw Everything")
+      expect(page).to have_content("Deborah Levy")
+      expect(page).to have_content("No genre listed")
+      expect(page).to have_css('.reviews', count: 2)
     end
   end
 end

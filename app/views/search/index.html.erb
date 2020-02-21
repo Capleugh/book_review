@@ -1,0 +1,9 @@
+<h1><%= @book[:title] %></h1>
+<h6><%= @book[:author] %></h6>
+<h6><%= @book[:genre] %></h6>
+<% @reviews.each do |review| %>
+  <ul class="reveiws">
+    <li><%= review[:summary] %></li>
+    <li><%= review[:publication_dt] %></li>
+  </ul>
+<% end %>
