@@ -12,7 +12,6 @@ describe "As a user" do
       expect(current_path).to eq('/search')
       expect(page).to have_content("The Man Who Saw Everything")
       expect(page).to have_content("Deborah Levy")
-      # expect(page).to have_content("No genre listed")
       expect(page).to have_css('.reviews', count: 2)
     end
   end
